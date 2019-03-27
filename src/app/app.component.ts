@@ -22,7 +22,13 @@ export class AppComponent {
     new Kombucha ('Coconut lime', 'humm',5.50 , 'Coconut lime'),
     new Kombucha ('Ginger Juniper', 'humm',6.50 , 'Ginger Juniper')
   ];
+  selectedBooch: Kombucha = null;
   addNewBooch(name: string, brand: string, price: number, flavor: string): void {
     this.kegList.push(new Kombucha(name,brand,price,flavor));
+  }
+  editBooch(clickedBooch) {
+
+    this.selectedBooch = clickedBooch;
+
   }
 }

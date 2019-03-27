@@ -6,9 +6,20 @@
   <li *ngFor="let kombucha of kegList"><h3>{{kombucha.name}}</h3><br>
      <p>{{kombucha.flavor}}</p> <br>
      <p>${{kombucha.price}}</p> <br>
-     <p><em>Brought to you by - </em>{{kombucha.brand}}</p> </li>
+     <p><em>Brought to you by - </em>{{kombucha.brand}}</p>
+     <button (click)="editBooch(kombucha)">Edit!</button>
+   </li>
 </ul>
-
+<div *ngIf="selectedBooch">
+  <label>Change Bootch Name:</label>
+  <input [(ngModel)]="selectedBooch.name">
+  <label>Change Bootch Flavor:</label>
+  <input [(ngModel)]="selectedBooch.flavor">
+  <label>Change Bootch Price:</label>
+  <input [(ngModel)]="selectedBooch.price" type="number">
+  <label>Change Bootch Brand:</label>
+  <input [(ngModel)]="selectedBooch.brand">
+</div>
 <h2>Booch Form</h2>
 <h3>Fill in the form below to add a new Kombucha to the list</h3>
 <form>
@@ -16,6 +27,8 @@
   <input [(ngModel)]="kombuchaName" type="text" name="kombucha" value=""placeholder="Kombucha Name">
   <label for="kombuchaFlavor"></label>
   <input [(ngModel)]="kombuchaFlavor" type="text" name="kombucha" value=""placeholder="Kombucha Flavor">
+
+
   <label for="kombuchaPrice"></label>
   <input [(ngModel)]="kombuchaPrice" type="number" name="kombucha" value=""placeholder="Kombucha Price">
   <label for="kombuchaBrand"></label>
