@@ -38,5 +38,15 @@ export class AppComponent {
       console.log(clickedBooch);
     }
   }
+  priceColor(bootch) {
+    if ( bootch.price < 4 ) {
+      return "green-price"
+    } else if (bootch.price >= 4 && bootch.price <= 6) {
+      return "blue-price"
+    } else {
+      return "red-price"
+    }
+  }
+
 
 }
