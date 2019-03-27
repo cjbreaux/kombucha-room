@@ -22,22 +22,25 @@ export class AppComponent {
     new Kombucha ('Coconut lime', 'humm',5.50 , 'Coconut lime'),
     new Kombucha ('Ginger Juniper', 'humm',6.50 , 'Ginger Juniper')
   ];
-  selectedBooch: Kombucha = null;
-  lowKegsArr = [];
+  //when selectedBooch was set to null, it wouldn't show up properly after login
+  selectedBooch: Kombucha = this.kegList[0];
   addNewBooch(name: string, brand: string, price: number, flavor: string): void {
     this.kegList.push(new Kombucha(name,brand,price,flavor));
   }
+
   editBooch(clickedBooch) {
     this.selectedBooch = clickedBooch;
     console.log(clickedBooch);
   }
+
   servePint(clickedBooch) {
     clickedBooch.pints--;
     if (clickedBooch.pints < 122) {
-      clickedBooch.lowPints = true);
+      clickedBooch.lowPints = true;
       console.log(clickedBooch);
     }
   }
+
   priceColor(bootch) {
     if ( bootch.price < 4 ) {
       return "green-price"
@@ -46,6 +49,12 @@ export class AppComponent {
     } else {
       return "red-price"
     }
+  }
+
+  employee: boolean = false;
+
+  login() {
+    this.employee = true;
   }
 
 

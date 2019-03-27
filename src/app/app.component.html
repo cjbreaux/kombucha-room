@@ -1,34 +1,45 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<title>The Kombucha TapRoom!</title>
-<h1>{{title}}</h1>
-<h2>What's on tap?</h2>
-<ul>
-  <li *ngFor="let kombucha of kegList"><h3>{{kombucha.name}}</h3><br>
-     <p>{{kombucha.flavor}}</p> <br>
-     <p [class]="priceColor(kombucha)">${{kombucha.price}}</p> <br>
-     <p><em>Brought to you by - </em>{{kombucha.brand}}</p> <br>
-     <p>Number of Pints left in Keg: {{kombucha.pints}}</p>
-     <button (click)="editBooch(kombucha)">Edit!</button>
-     <button (click)="servePint(kombucha)">Serve Pint!</button>
-   </li>
-</ul>
+<div class="">
+  <title>The Kombucha TapRoom!</title>
+  <h1>{{title}}</h1>
+  <h2>What's on tap?</h2>
+  <ul>
+    <li *ngFor="let kombucha of kegList"><h3>{{kombucha.name}}</h3><br>
+      <p>{{kombucha.flavor}}</p> <br>
+      <p [class]="priceColor(kombucha)">${{kombucha.price}}</p> <br>
+      <p><em>Brought to you by - </em>{{kombucha.brand}}</p> <br>
+      <p>Number of Pints left in Keg: {{kombucha.pints}}</p>
+      <!-- <button (click)="editBooch(kombucha)">Edit!</button>
+      <button (click)="servePint(kombucha)">Serve Pint!</button> -->
+    </li>
+  </ul>
+  <button (click)="login()">Employee Login</button>
+</div>
+
+
 
 <!-- Employee View -->
-<div *ngIf="selectedBooch">
+<div *ngIf="employee === true">
 
   <h2>These Kegs are Low on Booch!!!</h2>
-<div *ngFor= "let keg of kegList">
-  <div *ngIf="keg.lowPints===true">
-    <h3>{{keg.name}}</h3>
+    <div *ngFor= "let keg of kegList">
+      <div *ngIf="keg.lowPints===true">
+        <h3>{{keg.name}}</h3>
+      </div>
+    </div>
 
-  </div>
 
+  <ul>
+    <li *ngFor="let kombucha of kegList"> {{kombucha.name}} /
+      {{kombucha.flavor}} /
+      {{kombucha.price}} /
+      {{kombucha.brand}} /
+      No Pints Left: {{kombucha.pints}}
+      <button (click)="editBooch(kombucha)">Edit!</button>
+      <button (click)="servePint(kombucha)">Serve Pint!</button>
+    </li>
+  </ul>
 
-</div>
-<!-- <div class="lowKegs">
-<p>{{lowKegsArr}}</p>
-
-</div> -->
 
 
   <label>Change Bootch Name:</label>
@@ -54,9 +65,9 @@
     <input [(ngModel)]="kombuchaBrand" type="text" name="kombucha" value=""placeholder="Kombucha Brand">
     <button (click)="addNewBooch(kombuchaName,kombuchaBrand,kombuchaPrice,kombuchaFlavor)">Add New Kombucha</button>
 
-    <h3>{{kombuchaName}}</h3>
+    <!-- <h3>{{kombuchaName}}</h3>
     <h3>{{kombuchaFlavor}}</h3>
     <h3>{{kombuchaPrice}}</h3>
-    <h3>{{kombuchaBrand}}</h3>
+    <h3>{{kombuchaBrand}}</h3> -->
     </form>
   </div>
