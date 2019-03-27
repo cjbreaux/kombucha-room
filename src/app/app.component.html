@@ -6,8 +6,10 @@
   <li *ngFor="let kombucha of kegList"><h3>{{kombucha.name}}</h3><br>
      <p>{{kombucha.flavor}}</p> <br>
      <p>${{kombucha.price}}</p> <br>
-     <p><em>Brought to you by - </em>{{kombucha.brand}}</p>
+     <p><em>Brought to you by - </em>{{kombucha.brand}}</p> <br>
+     <p>Number of Pints left in Keg: {{kombucha.pints}}</p>
      <button (click)="editBooch(kombucha)">Edit!</button>
+     <button (click)="servePint(kombucha)">Serve Pint!</button>
    </li>
 </ul>
 <div *ngIf="selectedBooch">

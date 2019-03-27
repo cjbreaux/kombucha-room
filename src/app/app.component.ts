@@ -27,8 +27,9 @@ export class AppComponent {
     this.kegList.push(new Kombucha(name,brand,price,flavor));
   }
   editBooch(clickedBooch) {
-
     this.selectedBooch = clickedBooch;
-
+  }
+  servePint(clickedBooch) {
+    clickedBooch.pints--;
   }
 }
