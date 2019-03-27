@@ -23,13 +23,20 @@ export class AppComponent {
     new Kombucha ('Ginger Juniper', 'humm',6.50 , 'Ginger Juniper')
   ];
   selectedBooch: Kombucha = null;
+  lowKegsArr = [];
   addNewBooch(name: string, brand: string, price: number, flavor: string): void {
     this.kegList.push(new Kombucha(name,brand,price,flavor));
   }
   editBooch(clickedBooch) {
     this.selectedBooch = clickedBooch;
+    console.log(clickedBooch);
   }
   servePint(clickedBooch) {
     clickedBooch.pints--;
+    if (clickedBooch.pints < 122) {
+      clickedBooch.lowPints = true);
+      console.log(clickedBooch);
+    }
   }
+
 }

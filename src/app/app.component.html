@@ -12,7 +12,25 @@
      <button (click)="servePint(kombucha)">Serve Pint!</button>
    </li>
 </ul>
+
+<!-- Employee View -->
 <div *ngIf="selectedBooch">
+
+  <h2>These Kegs are Low on Booch!!!</h2>
+<div *ngFor= "let keg of kegList">
+  <div *ngIf="keg.lowPints===true">
+    <h3>{{keg.name}}</h3>
+
+  </div>
+
+
+</div>
+<!-- <div class="lowKegs">
+<p>{{lowKegsArr}}</p>
+
+</div> -->
+
+
   <label>Change Bootch Name:</label>
   <input [(ngModel)]="selectedBooch.name">
   <label>Change Bootch Flavor:</label>
@@ -21,24 +39,24 @@
   <input [(ngModel)]="selectedBooch.price" type="number">
   <label>Change Bootch Brand:</label>
   <input [(ngModel)]="selectedBooch.brand">
-</div>
-<h2>Booch Form</h2>
-<h3>Fill in the form below to add a new Kombucha to the list</h3>
-<form>
-  <label for="kombuchaName"></label>
-  <input [(ngModel)]="kombuchaName" type="text" name="kombucha" value=""placeholder="Kombucha Name">
-  <label for="kombuchaFlavor"></label>
-  <input [(ngModel)]="kombuchaFlavor" type="text" name="kombucha" value=""placeholder="Kombucha Flavor">
+    <h2>Booch Form</h2>
+    <h3>Fill in the form below to add a new Kombucha to the list</h3>
+    <form>
+    <label for="kombuchaName"></label>
+    <input [(ngModel)]="kombuchaName" type="text" name="kombucha" value=""placeholder="Kombucha Name">
+    <label for="kombuchaFlavor"></label>
+    <input [(ngModel)]="kombuchaFlavor" type="text" name="kombucha" value=""placeholder="Kombucha Flavor">
 
 
-  <label for="kombuchaPrice"></label>
-  <input [(ngModel)]="kombuchaPrice" type="number" name="kombucha" value=""placeholder="Kombucha Price">
-  <label for="kombuchaBrand"></label>
-  <input [(ngModel)]="kombuchaBrand" type="text" name="kombucha" value=""placeholder="Kombucha Brand">
-  <button (click)="addNewBooch(kombuchaName,kombuchaBrand,kombuchaPrice,kombuchaFlavor)">Add New Kombucha</button>
+    <label for="kombuchaPrice"></label>
+    <input [(ngModel)]="kombuchaPrice" type="number" name="kombucha" value=""placeholder="Kombucha Price">
+    <label for="kombuchaBrand"></label>
+    <input [(ngModel)]="kombuchaBrand" type="text" name="kombucha" value=""placeholder="Kombucha Brand">
+    <button (click)="addNewBooch(kombuchaName,kombuchaBrand,kombuchaPrice,kombuchaFlavor)">Add New Kombucha</button>
 
-  <h3>{{kombuchaName}}</h3>
-  <h3>{{kombuchaFlavor}}</h3>
-  <h3>{{kombuchaPrice}}</h3>
-  <h3>{{kombuchaBrand}}</h3>
-</form>
+    <h3>{{kombuchaName}}</h3>
+    <h3>{{kombuchaFlavor}}</h3>
+    <h3>{{kombuchaPrice}}</h3>
+    <h3>{{kombuchaBrand}}</h3>
+    </form>
+  </div>
