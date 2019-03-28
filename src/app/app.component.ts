@@ -12,7 +12,7 @@ export class AppComponent {
   month: number = this.currentTime.getMonth() + 1;
   day: number = this.currentTime.getDate();
   year: number = this.currentTime.getFullYear();
-  kegList : Kombucha[] = [
+  masterKegList : Kombucha[] = [
     new Kombucha ('Radiate', 'Soma',5.50 , 'Cherry Chai'),
     new Kombucha ('Thrive', 'Soma',3.50 , 'Lemon Ginger'),
 
@@ -23,9 +23,9 @@ export class AppComponent {
     new Kombucha ('Ginger Juniper', 'humm',6.50 , 'Ginger Juniper')
   ];
   //when selectedBooch was set to null, it wouldn't show up properly after login
-  selectedBooch: Kombucha = this.kegList[0];
+  selectedBooch: Kombucha = this.masterKegList[0];
   addNewBooch(name: string, brand: string, price: number, flavor: string): void {
-    this.kegList.push(new Kombucha(name,brand,price,flavor));
+    this.masterKegList.push(new Kombucha(name,brand,price,flavor));
   }
 
   editBooch(clickedBooch) {
@@ -41,15 +41,15 @@ export class AppComponent {
     }
   }
 
-  priceColor(bootch) {
-    if ( bootch.price < 4 ) {
-      return "green-price"
-    } else if (bootch.price >= 4 && bootch.price <= 6) {
-      return "blue-price"
-    } else {
-      return "red-price"
-    }
-  }
+  // priceColor(bootch) {
+  //   if ( bootch.price < 4 ) {
+  //     return "green-price"
+  //   } else if (bootch.price >= 4 && bootch.price <= 6) {
+  //     return "blue-price"
+  //   } else {
+  //     return "red-price"
+  //   }
+  // }
 
   employee: boolean = false;
 
