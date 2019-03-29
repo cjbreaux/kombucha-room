@@ -23,13 +23,13 @@ export class AppComponent {
     new Kombucha ('Ginger Juniper', 'humm',6.50 , 'Ginger Juniper')
   ];
   //when selectedBooch was set to null, it wouldn't show up properly after login
-  selectedBooch: Kombucha = this.masterKegList[0];
+  masterSelectedBooch: Kombucha = this.masterKegList[0];
   addNewBooch(name: string, brand: string, price: number, flavor: string): void {
     this.masterKegList.push(new Kombucha(name,brand,price,flavor));
   }
 
   editBooch(clickedBooch) {
-    this.selectedBooch = clickedBooch;
+    this.masterSelectedBooch = clickedBooch;
     console.log(clickedBooch);
   }
 

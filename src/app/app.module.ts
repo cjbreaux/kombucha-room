@@ -4,12 +4,14 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { CustomerListComponent } from './customer-list/customer-list.component';
+import { EditBoochComponent } from './edit-booch/edit-booch.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    CustomerListComponent
+    CustomerListComponent,
+    EditBoochComponent
   ],
   imports: [
     BrowserModule,

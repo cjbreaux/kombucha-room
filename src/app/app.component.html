@@ -1,7 +1,7 @@
 <!--The content below is only a placeholder and can be replaced.-->
 
 
-<app-customer-list [childKegList]="masterKegList"></app-customer-list>
+<app-customer-list [childKegList]="masterKegList" (clickSender)="login($event)"></app-customer-list>
 
 
 
@@ -30,14 +30,8 @@
 
 
 
-  <label>Change Bootch Name:</label>
-  <input [(ngModel)]="selectedBooch.name">
-  <label>Change Bootch Flavor:</label>
-  <input [(ngModel)]="selectedBooch.flavor">
-  <label>Change Bootch Price:</label>
-  <input [(ngModel)]="selectedBooch.price" type="number">
-  <label>Change Bootch Brand:</label>
-  <input [(ngModel)]="selectedBooch.brand">
+  <app-edit-booch [childSelectedBooch]="masterSelectedBooch"></app-edit-booch>
+
     <h2>Booch Form</h2>
     <h3>Fill in the form below to add a new Kombucha to the list</h3>
     <form>

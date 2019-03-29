@@ -1,4 +1,4 @@
-import { Component, OnInit, Input} from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Kombucha } from '../model/kombucha.model';
 
 @Component({
@@ -8,7 +8,7 @@ import { Kombucha } from '../model/kombucha.model';
 })
 export class CustomerListComponent implements OnInit {
   @Input() childKegList: Kombucha[];
-
+  @Output() clickSender = new EventEmitter();
 
   priceColor(bootch) {
     if ( bootch.price < 4 ) {
@@ -18,6 +18,10 @@ export class CustomerListComponent implements OnInit {
     } else {
       return "red-price"
     }
+  }
+
+  loginButtonClicked() {
+    this.clickSender.emit();
   }
 
   constructor() { }
