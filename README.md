@@ -1,27 +1,42 @@
-# Taproom
+# Kombucha Room
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.5.
+#### Names of Authors
+Chris Breaux, Nathan Nielson
 
-## Development server
+### Description
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+In order to practice developing with AngularJS, this project creates a webapp for a kombucha taproom. It allows customers to view a list of flavors available along with information about the brand, price and levels of kombuhca remaining in each keg. Additionally, it provides an employee view where users can dynamically edit information about each keg, keep track of kombucha levels, and add new kegs to the available offerings.
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Technologies and Resources
 
-## Build
+* AngularJS
+* HTML  
+* CSS
+* JavaScript
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
-## Running unit tests
+### Setup Instructions
+* Clone file from https://github.com/cjbreaux/kombucha-room.git
+* Navigate to the cloned folder in the terminal.
+* While in the project folder, run the following in the terminal:
+ ```html
+$ npm i
+```
+* After the files have downloaded, run the following:
+```html
+$ ng serve --open
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+### Stretch Goals
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+* Add styling, responsiveness
+* Delete kegs from list
+* Login authentication
 
-## Further help
+### License
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+MIT license
+
+Copyright (c) 2019 **Chris Breaux**
